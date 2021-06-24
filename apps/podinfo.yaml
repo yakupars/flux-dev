@@ -12,13 +12,13 @@ spec:
 
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta1
-kind: Kustomization
+kind: HelmChart
 metadata:
   name: podinfo
   namespace: dev
 spec:
   interval: 1m0s
-  path: ./charts
+  chart: ./charts/podinfo
   prune: true
   sourceRef:
     kind: GitRepository
